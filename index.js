@@ -41,4 +41,36 @@ header.appendChild(newElement);
 //code to remove element from DOM  
 // const main = document.querySelector("main");
 // const park = main.querySelector(".park-display");
-//main.removeChild(park);
+//main.removeChild(park); 
+
+const firstBtn = document.querySelector("button"); 
+firstBtn.addEventListener("click", (event) => { 
+  console.log("You clicked the button", event);
+});  
+
+const allBtns = document.querySelectorAll(".rate-button"); 
+allBtns.forEach((btn) => { 
+  btn.addEventListener("click", (event) => { 
+    console.log(event.target);
+  });
+}); 
+allBtns.forEach((btn) => { 
+  btn.addEventListener("click", (event) => { 
+    const park = event.target.parentNode;
+    park.style.backgroundColor = "#c8e6c9";
+  });
+}); 
+
+const nameSorter = document.querySelector("#name-sorter"); 
+nameSorter.addEventListener("click", (event) => { 
+  event.preventDefault();
+  console.log("You clicked the name sorter");
+});  
+
+console.log("Before!");
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  console.log("Loaded!");
+});
+
+console.log("After!");
